@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+        <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="w-[80%] mx-auto">
+        <h1 class="text-4xl font-bold text-[#002C5C] pb-5 pt-15">Job Application Tracker</h1>
+        <div class="grid grid-cols-3 gap-4" >
+            <div class="p-5">
+                <p class="text-[#323B49] font-medium">Total</p>
+                <p class="text-[#002C5C] font-bold" id="total">0</p>
+            </div>
+
+            <div class=" p-4">
+                <p class="text-[#323B49] font-medium">Interview</p>
+                <p class="text-[#10B981] font-bold" id="interviewCount">0</p>
+            </div>
+
+            <div class=" p-5">
+               <p class="text-[#323B49] font-medium">Rejected</p> 
+               <p class="text-[#EF4444] font-bold" id="rejectCount" class="text-">0</p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="my-7 border-[#E6E7E9] ">
+
+    <main class="w-[80%] mx-auto">
+        <div class="  ">
+            <div class=" text-gray-500 flex justify-between">
+                <h3 class="text-[#002C5C] font-semibold">Available Jobs</h3>
+                <p>8 Jobs</p>
+            </div>
+            
+            <button onclick="toggleMove('all-function-btn')" class="bg-blue-500 text-amber-50 gap-2 font-medium text-1xl py-2.5 px-8 rounded-[7px] mt-5.5 mb-5" id="all-function-btn">All</button>
+            <button onclick="toggleMove('interview-function-btn')" class=" text-[#323B49] bg-blue-100 gap-2 font-medium text-1xl py-2.5 px-8 rounded-[7px] mt-5.5 mb-5"id="interview-function-btn">Interview</button>
+            <button onclick="toggleMove('rejected-function-btn')" class=" text-[#323B49] bg-blue-100 gap-2 font-medium text-1xl py-2.5 px-8 rounded-[7px] mt-5.5 mb-5" id="rejected-function-btn">Rejected</button>
+        </div>
+
+        <section id="new-section">
+
+        </section>
+
+        <section id="allCards">
+            <!-- card 1 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="companyName  font-semibold text-2xl text-[#002C5C]">TechNova Ltd</p>
+                        <p class="jobRole text-[#323B49]">Frontend Developer</p>
+                        <br>
+                        <p class="details  text-[#323B49]">Dhaka, Bangladesh - Full-time - Salary: 40,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="status   text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p class="notes">Build responsive UI using HTML, CSS, and JavaScript.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 2 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">SoftEdge Solutions</p>
+                        <p class="text-[#323B49]">Backend Developer</p>
+                        <br>
+                        <p class="text-[#323B49]">Chittagong, Bangladesh - Part-time - Salary: 20,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Develop REST APIs using Node.js and Express.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 3 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">NextGen IT</p>
+                        <p class="text-[#323B49]">UI/UX Designer</p>
+                        <br>
+                        <p class="text-[#323B49]">Remote - Full-time - Salary: 30,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Design modern and user-friendly interfaces.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 4 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">DataCore</p>
+                        <p class="text-[#323B49]">Data Analyst</p>
+                        <br>
+                        <p class="text-[#323B49]">Dhaka, Bangladesh - Full-time - Salary: 60,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Analyze datasets and create business reports.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 5 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">CloudNet</p>
+                        <p class="text-[#323B49]">Frontend Developer</p>
+                        <br>
+                        <p class="text-[#323B49]">khulna, Bangladesh - Full-time - Salary: 50,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Build responsive UI using HTML, CSS, and JavaScript React.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 6 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">AppWorks</p>
+                        <p class="text-[#323B49]">Mobile App Developer</p>
+                        <br>
+                        <p class="text-[#323B49]">Remote - Contract - Salary: 55,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Build Android and iOS apps using Flutter.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 7 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-8">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">TechJacked Ltd</p>
+                        <p class="text-[#323B49]">Fullstack Developer</p>
+                        <br>
+                        <p class="text-[#323B49]">Toronto Canada - Full-time - Salary: 90,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Build responsive UI using HTML, CSS, and JavaScript React Angular.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+
+                         <!-- card 8 -->
+             <div class="card flex justify-between pt-6 pl-5 pb-10">
+                <!--main part-1-->
+                 <div class=" space-y-5">
+                    <!-- part 1 -->
+                     <div>
+                        <p class="font-semibold text-2xl text-[#002C5C]">techVanC</p>
+                        <p class="text-[#323B49]">Ios Developer</p>
+                        <br>
+                        <p class="text-[#323B49]">Dhaka, Bangladesh - Full-time - Salary: 40,000 BDT</p>
+                     </div>
+                     <!-- part 2 -->
+                      <div>
+                        <button class="text-[#002C5C] bg-sky-100 px-2 py-2 mb-3 rounded-[5px]">  Not Applied</button>
+                        <p>Build responsive smooth ios app.</p>
+                      </div>
+                    <!-- part 3 -->
+                     <div>
+                        <button class="interview-btn px-5 py-2 text-green-400 border-2 rounded-[6px] ">Interview</button>
+                        <button class="rejected-btn  px-5 py-2 text-red-400 border-2 rounded-[6px] ">Rejected</button>
+                     </div>
+                 </div>
+
+                <!--main part-2-->
+                <div >
+                    
+                    <button class="delete-btn "><img src="./Group 1.png" alt=""></button>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
