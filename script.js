@@ -43,9 +43,12 @@ function toggleMove(id){
 mainContainer.addEventListener('click ' , function (event){
      console.log(event.target.parentNode.parentNode);
 
-    console.log(event.target.classList.contains('interview-btn')); {
+    console.log(event.target.classList.contains('interview-btn')); 
 
-     const parenNode = event.target.parentNode.parentNode;
+        if (event.target.classList.contains('interview-btn')){
+            const parenNode = event.target.parentNode.parentNode;
+       
+    
 
     const companyName = parenNode.querySelector('.companyName').innerText
     const jobRole = parenNode.querySelector('.jobRole').innerText
@@ -70,7 +73,7 @@ mainContainer.addEventListener('click ' , function (event){
     renderInterview()
 }
 
- }
+  }
   )
 
   function renderInterview (){
