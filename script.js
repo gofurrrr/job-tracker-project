@@ -22,7 +22,7 @@ function calculateCount(){
     rejectCount.innerText = rejectList.length
 }
 calculateCount()
-
+    // button funconality 
 function toggleMove(id){
    allFunctionBtn.classList.add('bg-blue-100', 'text-black')
    interviewFunctionBtn.classList.add('bg-blue-100', 'text-black')
