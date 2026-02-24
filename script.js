@@ -44,6 +44,7 @@ function toggleMove(id){
    if(id == 'interview-function-btn'){
     allCardsSection.classList.add('hidden');
     newSection.classList.remove('hidden')
+    renderInterview()
    }else if(id== 'all-function-btn'){
     allCardsSection.classList.remove('hidden');
     newSection.classList.add('hidden')
@@ -87,7 +88,11 @@ const companyExist = interviewList.find(item => item.companyName == cardInfo.com
 
    rejectList = rejectList.filter(item=> item.companyName != cardInfo.companyName)
   calculateCount() 
-  renderInterview()
+//  renderInterview()
+  if (currentStatus == 'rejected-function-btn'){
+    renderRejected()
+  }
+ 
 
     }
 
@@ -125,7 +130,7 @@ const companyExist = rejectList.find(item => item.companyName == cardInfo.compan
 
   calculateCount() 
  
-//   renderRejected()
+
 
     }
 
